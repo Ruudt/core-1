@@ -60,6 +60,8 @@ $GLOBALS['TL_LANG']['tl_module']['iso_buttons']                     = array('But
 $GLOBALS['TL_LANG']['tl_module']['iso_related_categories']          = array('Related categories', 'Select the categories to show products of.');
 $GLOBALS['TL_LANG']['tl_module']['iso_includeMessages']             = array('Include messaging', 'This setting allows the module to include any errors, notifications, or confirmations the visitor should be aware of.');
 $GLOBALS['TL_LANG']['tl_module']['iso_continueShopping']            = array('Enable "Continue shopping" button', 'Add a link to the currently added product to the cart.');
+$GLOBALS['TL_LANG']['tl_module']['iso_wishlist_jumpTo'] 				= array('Shopping Wishlist Jump to page', 'This setting defines to which page a user will be redirected when requesting a form to send his wishlist by e-mail.');
+
 
 /**
  * Legends

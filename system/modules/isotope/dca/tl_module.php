@@ -34,6 +34,7 @@ $GLOBALS['TL_DCA']['tl_module']['palettes']['iso_cumulativefilter']     = '{titl
 $GLOBALS['TL_DCA']['tl_module']['palettes']['iso_addressbook']          = '{title_legend},name,headline,type;{template_legend},memberTpl,tableless,iso_includeMessages;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
 $GLOBALS['TL_DCA']['tl_module']['palettes']['iso_relatedproducts']      = '{title_legend},name,headline,type;{config_legend},iso_related_categories,numberOfItems,perPage;{redirect_legend},iso_addProductJumpTo;{template_legend:hide},iso_list_layout,iso_gallery,iso_cols,iso_use_quantity,iso_includeMessages,iso_emptyMessage,iso_buttons;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
 $GLOBALS['TL_DCA']['tl_module']['palettes']['iso_messages']             = '{title_legend},name,headline,type;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
+$GLOBALS['TL_DCA']['tl_module']['palettes']['iso_wishlist']             = '{title_legend},name,headline,type;{redirect_legend},iso_cart_jumpTo,iso_wishlist_jumpTo,iso_continueShopping;{template_legend},iso_includeMessages,iso_cart_layout;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
 
 
 /**
@@ -545,6 +546,16 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['iso_continueShopping'] = array
 $GLOBALS['TL_DCA']['tl_module']['fields']['iso_productcache'] = array
 (
     'sql'                       => "blob NULL",
+);
+
+$GLOBALS['TL_DCA']['tl_module']['fields']['iso_wishlist_jumpTo'] = array
+(
+    'label'                     => &$GLOBALS['TL_LANG']['tl_module']['iso_wishlist_jumpTo'],
+    'exclude'                   => true,
+    'inputType'                 => 'pageTree',
+    'explanation'               => 'jumpTo',
+    'eval'                      => array('fieldType'=>'radio'),
+    'sql'                       => "int(10) unsigned NOT NULL default '0'",
 );
 
 

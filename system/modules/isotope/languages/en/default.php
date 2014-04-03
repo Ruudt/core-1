@@ -70,6 +70,7 @@ $GLOBALS['TL_LANG']['MSC']['submitLabel']                       = 'Submit';
 $GLOBALS['TL_LANG']['MSC']['clearFiltersLabel']                 = 'Clear Filters';
 $GLOBALS['TL_LANG']['MSC']['buttonLabel']['update']             = 'Update';
 $GLOBALS['TL_LANG']['MSC']['buttonLabel']['add_to_cart']        = 'Add To Cart';
+$GLOBALS['TL_LANG']['MSC']['buttonLabel']['add_to_wishlist']    = 'Add To Wishlist';
 $GLOBALS['TL_LANG']['MSC']['orderByLabel']                      = 'Order By:';
 $GLOBALS['TL_LANG']['MSC']['noProducts']                        = 'No products have been found.';
 $GLOBALS['TL_LANG']['MSC']['previousStep']                      = 'Back';
@@ -185,6 +186,13 @@ $GLOBALS['TL_LANG']['MSC']['iso_orderCollectionBy']['asc_name']     = 'by produc
 $GLOBALS['TL_LANG']['MSC']['iso_orderCollectionBy']['desc_name']    = 'by product name (descending)';
 $GLOBALS['TL_LANG']['MSC']['iso_orderCollectionBy']['asc_price']    = 'by price (ascending)';
 $GLOBALS['TL_LANG']['MSC']['iso_orderCollectionBy']['desc_price']   = 'by price (descending)';
+$GLOBALS['TL_LANG']['MSC']['addedToWishlist']   = 'The selected product has been added to your shopping wishlist.';
+$GLOBALS['TL_LANG']['MSC']['noItemsInWishlist'] = 'There are no items in your wishlist.';
+$GLOBALS['TL_LANG']['MSC']['wishlistBT']        = 'Shopping Wishlist';
+$GLOBALS['TL_LANG']['MSC']['sendWishlistBT']    = 'Send Wishlist by e-mail';
+$GLOBALS['TL_LANG']['MSC']['updateWishlistBT'] 	= 'Update Wishlist';
+$GLOBALS['TL_LANG']['MSC']['viewWishlist']		= 'View your wishlist';
+$GLOBALS['TL_LANG']['MSC']['wishlistSent']		= 'Your wishlist has been sent!';
 
 
 /**
