@@ -1,32 +1,16 @@
-<?php if (!defined('TL_ROOT')) die('You can not access this file directly!');
+<?php
 
 /**
- * Contao Open Source CMS
- * Copyright (C) 2005-2010 Leo Feyer
+ * Isotope eCommerce for Contao Open Source CMS
  *
- * Formerly known as TYPOlight Open Source CMS.
+ * Copyright (C) 2009-2014 terminal42 gmbh & Isotope eCommerce Workgroup
  *
- * This program is free software: you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation, either
- * version 3 of the License, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this program. If not, please visit the Free
- * Software Foundation website at <http://www.gnu.org/licenses/>.
- *
- * PHP version 5
- * @copyright  Isotope eCommerce Workgroup 2009-2011
- * @author     Kamil Kuźmiński <kamil.kuzminski@gmail.com>
- * @author     Andreas Schempp <andreas@schempp.ch>
+ * @package    Isotope
+ * @link       http://isotopeecommerce.org
  * @license    http://opensource.org/licenses/lgpl-3.0.html
  */
 
+namespace Isotope;
 
 class Wishlist extends Frontend
 {
@@ -80,17 +64,17 @@ class Wishlist extends Frontend
 		$intQuantity = ($objModule->iso_use_quantity && intval($this->Input->post('quantity_requested')) > 0) ? intval($this->Input->post('quantity_requested')) : 1;
 
 		if ($this->IsotopeWishlist->addProduct($objProduct, $intQuantity) !== false)
-		{			
+		{
 			if($objModule->iso_wishlist_jumpTo)
 			{
 				// Get current "jumpTo" page
 				$objPage = $this->Database->prepare("SELECT id, alias FROM tl_page WHERE id=?")
 										  ->limit(1)
 										  ->execute($objModule->iso_wishlist_jumpTo);
-						
+
 				$strUrl = '<a href="'.ampersand($this->generateFrontendUrl($objPage->row())).'" title="'.$GLOBALS['TL_LANG']['MSC']['viewWishlist'].'">'.$GLOBALS['TL_LANG']['MSC']['viewWishlist'].'</a>';
 			}
-				
+
 			$_SESSION['ISO_CONFIRM'][] = $GLOBALS['TL_LANG']['MSC']['addedToWishlist'] . ' ' . $strUrl;
 			$this->jumpToOrReload($objModule->iso_addProductJumpTo);
 		}

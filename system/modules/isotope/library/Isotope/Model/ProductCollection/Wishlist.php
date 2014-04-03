@@ -1,35 +1,21 @@
-<?php if (!defined('TL_ROOT')) die('You can not access this file directly!');
+<?php
 
 /**
- * Contao Open Source CMS
- * Copyright (C) 2005-2010 Leo Feyer
+ * Isotope eCommerce for Contao Open Source CMS
  *
- * Formerly known as TYPOlight Open Source CMS.
+ * Copyright (C) 2009-2014 terminal42 gmbh & Isotope eCommerce Workgroup
  *
- * This program is free software: you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation, either
- * version 3 of the License, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this program. If not, please visit the Free
- * Software Foundation website at <http://www.gnu.org/licenses/>.
- *
- * PHP version 5
- * @copyright  Isotope eCommerce Workgroup 2009-2011
- * @author     Kamil Kuźmiński <kamil.kuzminski@gmail.com>
- * @author     Andreas Schempp <andreas@schempp.ch>
- * @author     Yanick Witschi <yanick.witschi@certo-net.ch>
+ * @package    Isotope
+ * @link       http://isotopeecommerce.org
  * @license    http://opensource.org/licenses/lgpl-3.0.html
  */
 
+namespace Isotope\Model\ProductCollection;
 
-class IsotopeWishlist extends IsotopeProductCollection
+use Isotope\Interfaces\IsotopeProductCollection;
+use Isotope\Model\ProductCollection;
+
+class Wishlist extends ProductCollection implements IsotopeProductCollection
 {
 
 	/**
@@ -37,18 +23,6 @@ class IsotopeWishlist extends IsotopeProductCollection
 	 * @var string
 	 */
 	protected $strHash = '';
-
-	/**
-	 * Name of the current table
-	 * @var string
-	 */
-	protected $strTable = 'tl_iso_wishlist';
-
-	/**
-	 * Name of the child table
-	 * @var string
-	 */
-	protected $ctable = 'tl_iso_wishlist_items';
 
 	/**
 	 * Name of the temporary wishlist cookie

@@ -1,35 +1,18 @@
-<?php if (!defined('TL_ROOT')) die('You can not access this file directly!');
+<?php
 
 /**
- * Contao Open Source CMS
- * Copyright (C) 2005-2010 Leo Feyer
+ * Isotope eCommerce for Contao Open Source CMS
  *
- * Formerly known as TYPOlight Open Source CMS.
+ * Copyright (C) 2009-2014 terminal42 gmbh & Isotope eCommerce Workgroup
  *
- * This program is free software: you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation, either
- * version 3 of the License, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this program. If not, please visit the Free
- * Software Foundation website at <http://www.gnu.org/licenses/>.
- *
- * PHP version 5
- * @copyright  Isotope eCommerce Workgroup 2009-2011
- * @author     Kamil Kuźmiński <kamil.kuzminski@gmail.com>
- * @author     Andreas Schempp <andreas@schempp.ch>
- * @author     Yanick Witschi <yanick.witschi@certo-net.ch>
+ * @package    Isotope
+ * @link       http://isotopeecommerce.org
  * @license    http://opensource.org/licenses/lgpl-3.0.html
  */
 
+namespace Isotope\Module;
 
-class ModuleIsotopeWishlist extends ModuleIsotope
+class Wishlist extends Module
 {
 
 	/**
@@ -84,9 +67,9 @@ class ModuleIsotopeWishlist extends ModuleIsotope
 			$arrSurcharges[$k]['total_price']	= $this->Isotope->formatPriceWithCurrency($arrSurcharge['total_price']);
 			$arrSurcharges[$k]['rowclass']		= trim('foot_'.($k+1) . ' ' . $arrSurcharge[$k]['rowclass']);
 		}
-		
+
 		$arrProducts = $this->IsotopeWishlist->getProducts();
-		
+
 		//Wishlist doesn't have a redirect upon add feature, therefore, we'll default to the last added product for the "continue shopping" feature.
 		$lastAdded = $this->Isotope->Cart->lastAdded; //count($_SESSION['ISO_CONFIRM']) ? $this->Isotope->Cart->lastAdded : 0;
 
@@ -145,7 +128,7 @@ class ModuleIsotopeWishlist extends ModuleIsotope
 				'remove_link_title' => sprintf($GLOBALS['TL_LANG']['MSC']['removeProductLinkTitle'], $objProduct->name),
 				'class'				=> 'row_' . $i . ($i%2 ? ' even' : ' odd') . ($i==0 ? ' row_first' : ''),
 			));
-			
+
 			//if ($lastAdded == $objProduct->cart_id)
 			//{
 			$objTemplate->continueJumpTo = $objProduct->href_reader;
@@ -190,7 +173,7 @@ class ModuleIsotopeWishlist extends ModuleIsotope
 
 		$this->Template->empty = false;
 		$this->Template->wishlist = $objTemplate->parse();
-		
+
 	}
 }
 
